@@ -22,7 +22,7 @@ class Noticia(BaseModel):
     data = CharField()
 
     def __str__(self):
-        return str(self.titulo) + "\n" + str(self.assunto) + "\n" + str(self.data)
+        return 'Título: ' + str(self.titulo) + "\n" + 'Assunto: ' + str(self.assunto) + "\n" + 'Data: ' + str(self.data)
 
 class Musica(BaseModel):
     nome = CharField()
@@ -31,21 +31,21 @@ class Musica(BaseModel):
     album = CharField()
 
     def __str__(self):
-        return str(self.nome) + "\n" + str(self.cantor.nome) + "\n" + str(self.gravadora) + "\n" + str(self.album) 
+        return 'Nome: ' + str(self.nome) + "\n" + 'Cantor(a): ' + str(self.cantor.nome) + "\n" + 'Gravadora: '+ str(self.gravadora) + "\n" + 'Álbum: ' +str(self.album) 
 
 class Propaganda(BaseModel):
     empresa = CharField()
     duracao = CharField()
 
     def __str__(self):
-        return str(self.empresa) + "\n" + str(self.duracao)
+        return 'Empresa: ' + str(self.empresa) + "\n" + 'Duração: ' + str(self.duracao)
 
 class Locutor(BaseModel):
     nome = ForeignKeyField(Pessoa)
     contrato = CharField()
     
     def __str__(self):
-        return str(self.nome.nome) + "\n" + str(self.contrato)
+        return 'Nome: ' + str(self.nome.nome) + "\n" + 'Número de contrato: ' + str(self.contrato)
 
 class Ouvinte(BaseModel):
     nome = ForeignKeyField(Pessoa)
@@ -67,7 +67,7 @@ class NotaDeAniversariante(BaseModel):
     data = CharField()
 
     def __str__(self):
-        return str(self.aniversariante.nome) + "\n" + str(self.data)
+        return 'Aniversariante: ' + str(self.aniversariante.nome) + "\n" + 'Data: ' + str(self.data)
 
 class Frequencia(BaseModel):
     tipo = CharField()
